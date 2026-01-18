@@ -1,0 +1,520 @@
+/* ===================================
+   THINK MARKETING - STYLES
+   Clean, modern one-page site
+   =================================== */
+
+/* ===================================
+   GLOBAL STYLES & RESET
+   =================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Color Variables */
+    --primary-red: #D32F2F;
+    --dark-red: #B71C1C;
+    --text-dark: #212121;
+    --text-medium: #424242;
+    --text-light: #757575;
+    --background-light: #FAFAFA;
+    --white: #FFFFFF;
+    --border-color: #E0E0E0;
+    
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 3rem;
+    --spacing-xl: 4rem;
+    
+    /* Typography */
+    --font-primary: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    --line-height-base: 1.6;
+    --line-height-heading: 1.2;
+}
+
+body {
+    font-family: var(--font-primary);
+    font-size: 16px;
+    line-height: var(--line-height-base);
+    color: var(--text-dark);
+    background-color: var(--white);
+}
+
+/* ===================================
+   TYPOGRAPHY
+   =================================== */
+
+h1, h2, h3, h4 {
+    line-height: var(--line-height-heading);
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: var(--spacing-sm);
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: var(--spacing-md);
+}
+
+h2 {
+    font-size: 1.75rem;
+    margin-bottom: var(--spacing-md);
+}
+
+h3 {
+    font-size: 1.25rem;
+}
+
+p {
+    margin-bottom: var(--spacing-sm);
+    color: var(--text-medium);
+}
+
+a {
+    color: var(--primary-red);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--dark-red);
+    text-decoration: underline;
+}
+
+/* ===================================
+   LAYOUT & CONTAINER
+   =================================== */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+section {
+    padding: var(--spacing-xl) 0;
+}
+
+/* ===================================
+   HEADER
+   =================================== */
+
+.header {
+    background-color: var(--white);
+    padding: 0.75rem 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 60px;
+    width: auto;
+    display: block;
+}
+
+.header-buttons {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.btn-call,
+.btn-text {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    white-space: nowrap;
+}
+
+@media (max-width: 767px) {
+    .logo img {
+        height: 45px;
+    }
+    
+    .header-buttons {
+        gap: 0.5rem;
+    }
+    
+    .btn-call,
+    .btn-text {
+        padding: 0.625rem 1rem;
+        font-size: 0.875rem;
+    }
+}
+
+/* ===================================
+   BUTTONS
+   =================================== */
+
+.btn {
+    display: inline-block;
+    padding: 0.875rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--primary-red);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background-color: var(--dark-red);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(211, 47, 47, 0.3);
+    text-decoration: none;
+}
+
+/* ===================================
+   HERO SECTION
+   =================================== */
+
+.hero {
+    background-color: var(--background-light);
+    background-image: url('../assets/images/think-marketing-hero.png');
+    background-size: cover;
+    background-position: bottom right;
+    background-repeat: no-repeat;
+    text-align: center;
+    padding: var(--spacing-xl) 0;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* Mobile: Show more of the image by zooming out */
+@media (max-width: 767px) {
+    .hero {
+        background-size: 160%;
+        padding: var(--spacing-md) 0 var(--spacing-xl) 0;
+        min-height: 60vh;
+        align-items: flex-start;
+    }
+}
+
+.hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: 2.25rem;
+    color: var(--text-dark);
+    margin-bottom: var(--spacing-md);
+}
+
+.hero .subheadline {
+    font-size: 1.125rem;
+    color: var(--text-medium);
+    max-width: 600px;
+    margin: 0 auto var(--spacing-lg) auto;
+}
+
+/* ===================================
+   SERVICES SECTION
+   =================================== */
+
+.services {
+    background-color: var(--white);
+}
+
+.services h2 {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+}
+
+.service-card {
+    padding: var(--spacing-md);
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.service-card:hover {
+    border-color: var(--primary-red);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transform: translateY(-4px);
+}
+
+.service-card h3 {
+    color: var(--primary-red);
+    margin-bottom: var(--spacing-sm);
+}
+
+/* ===================================
+   WHY US SECTION
+   =================================== */
+
+.why-us {
+    background-color: var(--background-light);
+}
+
+.why-us h2 {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+}
+
+.benefit h3 {
+    color: var(--text-dark);
+    margin-bottom: var(--spacing-xs);
+}
+
+.benefit p {
+    color: var(--text-medium);
+}
+
+/* ===================================
+   LOCAL SEO SECTION
+   =================================== */
+
+.local-seo {
+    background-color: var(--white);
+    text-align: center;
+}
+
+.local-seo h2 {
+    margin-bottom: var(--spacing-md);
+}
+
+.local-seo p {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.0625rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+/* ===================================
+   CONTACT SECTION
+   =================================== */
+
+.contact {
+    background-color: var(--background-light);
+    padding-bottom: var(--spacing-sm);
+}
+
+.contact h2 {
+    text-align: center;
+    margin-bottom: var(--spacing-sm);
+}
+
+.contact > .container > p {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.btn-quote {
+    display: block;
+    margin: 0 auto var(--spacing-lg) auto;
+    font-size: 1.25rem;
+    padding: 1.125rem 2.5rem;
+    max-width: 350px;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto var(--spacing-lg) auto;
+}
+
+.form-group {
+    margin-bottom: var(--spacing-md);
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: var(--spacing-xs);
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    font-family: var(--font-primary);
+    border: 2px solid var(--border-color);
+    border-radius: 4px;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-red);
+}
+
+.contact-form button {
+    width: 100%;
+}
+
+.contact-info {
+    text-align: center;
+    margin-top: var(--spacing-lg);
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid var(--border-color);
+}
+
+.contact-info p {
+    margin-bottom: var(--spacing-sm);
+    font-size: 1.0625rem;
+}
+
+.contact-logo {
+    margin-top: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
+    height: 150px;
+    width: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ===================================
+   FOOTER
+   =================================== */
+
+.footer {
+    background-color: var(--text-dark);
+    color: var(--white);
+    text-align: center;
+    padding: var(--spacing-lg) 0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+}
+
+.footer-text p {
+    color: var(--white);
+    margin-bottom: var(--spacing-xs);
+}
+
+.footer-text p strong {
+    font-size: 1.25rem;
+}
+
+.footer-logo {
+    text-align: center;
+}
+
+.footer-logo img {
+    height: 100px;
+    width: auto;
+    margin-bottom: var(--spacing-xs);
+}
+
+.footer-logo .copyright {
+    font-size: 0.875rem;
+    color: var(--text-light);
+    margin-bottom: 0;
+}
+
+@media (max-width: 767px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--spacing-md);
+    }
+    
+    .footer-text {
+        text-align: center;
+    }
+    
+    .footer-logo img {
+        height: 70px;
+    }
+}
+
+/* ===================================
+   RESPONSIVE DESIGN - TABLET
+   =================================== */
+
+@media (min-width: 768px) {
+    
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .hero .subheadline {
+        font-size: 1.25rem;
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+/* ===================================
+   RESPONSIVE DESIGN - DESKTOP
+   =================================== */
+
+@media (min-width: 1024px) {
+    
+    .hero h1 {
+        font-size: 3.5rem;
+    }
+
+    section {
+        padding: 5rem 0;
+    }
+
+    .container {
+        padding: 0 var(--spacing-lg);
+    }
+
+}
+
+/* ===================================
+   SMOOTH SCROLLING
+   =================================== */
+
+html {
+    scroll-behavior: smooth;
+}
